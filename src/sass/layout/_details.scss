@@ -1,0 +1,142 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+
+.details {
+  height: 100vh;
+  .details__container {
+    max-width: 1080px;
+    margin: 0 auto;
+    .details__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.25em;
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 0.875em;
+        .pokemonName {
+          font-size: 2rem;
+          color: map-get(colors.$Grayscale, "White");
+          text-transform: capitalize;
+          font-weight: 700;
+        }
+      }
+      .header-right {
+        .pokemonId {
+          color: map-get(colors.$Grayscale, "White");
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .details__info {
+      margin-top: 9em;
+      position: relative;
+      .pokemonImage {
+        position: absolute;
+        height: 12.5em;
+        margin: auto;
+        top: -9em;
+        left: 0;
+        right: 0;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: map-get(colors.$Grayscale, "White");
+        border-radius: 0.5em;
+        padding: 3.5em 0 0 0;
+        .types {
+          display: flex;
+          justify-content: center;
+          gap: 1em;
+          margin-bottom: 1em;
+          .pokemonType {
+            padding: 0.4em 0.7em;
+            border-radius: 2em;
+            .type-name {
+              color: map-get(colors.$Grayscale, "White");
+              font-weight: 700;
+              text-transform: capitalize;
+            }
+          }
+        }
+        .about {
+          text-align: center;
+          .about-text {
+            font-size: map-get(variables.$HeaderFont, "HeadlineBold");
+            font-weight: 700;
+          }
+          .about-measurements {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            margin-top: 2em;
+            .pokemon-measurement {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border-right: 2px solid map-get(colors.$Grayscale, "Light");
+              padding: 0.5em 2em;
+              .measurement-value {
+                color: map-get(colors.$Grayscale, "Medium");
+              }
+              .row {
+                display: flex;
+                align-items: center;
+                gap: 1.3em;
+                img {
+                  height: 2em;
+                }
+              }
+              .col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+            }
+          }
+        }
+        .base-stats {
+          max-width: 700px;
+          width: 100%;
+          text-align: center;
+          .base-stats-text {
+            font-size: map-get(variables.$HeaderFont, "HeadlineBold");
+            font-weight: 700;
+            font-size: clamp(1rem, 2vw, 3em);
+          }
+          .stats {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .pokemon-stat {
+              display: flex;
+              align-items: center;
+              gap: 0.5em;
+              justify-content: center;
+              .stat-name {
+                white-space: nowrap;
+              }
+              .stats-bar {
+                display: flex;
+                max-width: 500px;
+                width: 100%;
+                border-radius: 1em;
+                height: 0.5em;
+                overflow: hidden;
+
+                .stat-complete {
+                  display: block;
+                  content: "";
+                  border-radius: 1em 0 0 1em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+.header {
+  background-color: colors.$Primary;
+  padding: 1em 1em 0 1em;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    .container-top {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 0.5em;
+      .app-name {
+        color: map-get(colors.$Grayscale, "White");
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        font-weight: 700;
+      }
+    }
+    .container-bottom {
+      display: flex;
+      justify-content: end;
+      max-width: 25em;
+      width: 100%;
+      .searchForm {
+        width: 100%;
+        .row {
+          display: flex;
+          position: relative;
+          align-items: center;
+          gap: 1em;
+        }
+      }
+      .inputContainer {
+        position: relative;
+        width: 100%;
+        margin-top: .5em;
+        .searchInput {
+          height: 2.5em;
+          border-radius: 1.5em;
+          padding: 0 0 0 3em;
+          outline: none;
+          max-width: 25em;
+          width: 100%;
+        
+          border: none;
+          box-shadow: inset 0 1px 5px map-get(colors.$Grayscale, "Medium");
+          &::placeholder {
+            color: map-get(colors.$Grayscale, "Medium");
+          }
+        }
+        .search-icon-container {
+          position: absolute;
+          left: 0.5em;
+          top: 30%;
+          .searchIcon {
+            height: 1.2em;
+            color: colors.$Primary;
+            fill: colors.$Primary;
+          }
+        }
+      }
+      .searchForm-sortBy {
+        position: absolute;
+        right: -2.8em;
+        top: 4em;
+        background-color: colors.$Primary;
+        box-shadow: 0 0 10px 5px rgba(47, 45, 45, 0.277);
+        padding: 0.4em;
+        border-radius: 1em;
+        z-index: 999;
+        span {
+          padding-left: 1.5em;
+          color: map-get(colors.$Grayscale, "White");
+          font-weight: 700;
+          font-size: 1rem;
+        }
+        .sort-type {
+          label {
+            margin-left: 0.5em;
+            font-size: 0.8rem;
+            color: map-get(colors.$Grayscale, "Dark");
+            font-weight: 500;
+          }
+          input[type="radio"] {
+            transform: scale(1.5);
+          }
+        }
+        .radio-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          background-color: map-get(colors.$Grayscale, "White");
+          border-radius: 0.8em;
+          box-shadow: inset 0 1px 6px map-get(colors.$Grayscale, "Medium");
+          accent-color: colors.$Primary;
+          padding: 1em 1.25em;
+          gap: 1em;
+          margin-top: 1em;
+        }
+      }
+      .sort-indicator {
+        .sortToggle {
+          border: none;
+          outline: none;
+          padding: 0.5em 0.9em;
+          border-radius: 2em;
+          box-shadow: inset 0px 1px 5px map-get(colors.$Grayscale, "Medium");
+          cursor: pointer;
+          .sortingType {
+            color: colors.$Primary;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .header {
+    .container {
+      flex-direction: column;
+      align-items: start;
+      .container-bottom {
+        min-width: 100%;
+        .inputContainer {
+          width: 100%;
+          .searchInput {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

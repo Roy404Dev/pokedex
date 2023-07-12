@@ -1,0 +1,44 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+
+.main {
+  background-color: colors.$Primary;
+  min-height: 100vh;
+  padding: 2em 1em 0.5em 1em;
+  .container {
+    max-width: 1280px;
+    background-color: map-get(colors.$Grayscale, "White");
+    border-radius: 1em;
+    box-shadow: inset 0px 2px 8px 0px hsla(0, 0%, 13%, 0.5);
+    margin: 0 auto;
+    padding-bottom: 3em;
+    .cards-container {
+      display: grid;
+      margin: 0.25em;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1em;
+      padding: 3em 1.5em;
+    }
+    .loadMore {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .load-more-btn {
+        max-width: 7em;
+        color: map-get(colors.$Grayscale, "Dark");
+        font-size: 1.3rem;
+        border: none;
+        outline: none;
+        border-radius: 1em;
+        box-shadow: 0px 2px 8px 0px hsla(0, 0%, 13%, 0.5);
+        cursor: pointer;
+        padding: 0.5em;
+        transition: 150ms ease;
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0px 4px 8px 0px hsla(0, 0%, 13%, 0.5);
+        }
+      }
+    }
+  }
+}

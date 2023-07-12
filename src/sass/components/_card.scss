@@ -1,0 +1,50 @@
+@use "../abstracts/colors";
+@use "../abstracts/variables";
+
+.pokemonCard {
+  box-shadow: 0px 2px 8px 0px hsla(0, 0%, 13%, 0.5);
+  cursor: pointer;
+  background-color: map-get(colors.$Grayscale, "White");
+  border-radius: 1em;
+  transition: 150ms ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 8px 0px hsla(0, 0%, 13%, 0.5);
+  }
+  .card-top {
+    height: 8em;
+    position: relative;
+    background-color: map-get(colors.$Grayscale, "White");
+    border-radius: 1em 1em 0 0;
+    .pokemon-id {
+      color: map-get(colors.$Grayscale, "Medium");
+      text-align: end;
+      padding: 0.5em 1em 0 0;
+      font-weight: 500;
+    }
+  }
+  .pokemon-image {
+    z-index: 999;
+    position: absolute;
+    scale: 0.7;
+    top: -1em;
+  }
+  .card-bottom {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 6em;
+    border-radius: 1em;
+    background-color: map-get(colors.$Grayscale, "Background");
+    .pokemon-name {
+      position: relative;
+      bottom: 0.2em;
+      color: map-get(colors.$Grayscale, "Dark");
+      font-weight: 400;
+      text-transform: capitalize;
+      font-size: 1.8rem;
+    }
+  }
+}

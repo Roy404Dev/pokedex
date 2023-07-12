@@ -4,11 +4,11 @@ import Home from './pages/Home/Home';
 import Details from './pages/Home/Details';
 const router = createBrowserRouter([
   {
-    path: '/pokedex/',
+    path: '/',
     element: <Home />,
   },
   {
-    path: '/pokedex/pokemon/:id',
+    path: '/pokemon/:id',
     element: <Details />,
   }
 ]);

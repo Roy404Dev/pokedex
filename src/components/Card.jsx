@@ -12,7 +12,7 @@ const Card = ({ name, id }) => {
   const imgURL =
     "https://raw.githubusercontent.com/PokeApi/sprites/master/sprites/pokemon/other/official-artwork/";
   return (
-    <Link to={"/pokemon/" + id} style={{ textDecoration: 'none' }}>
+    <Link to={"/pokedex/pokemon/" + id} style={{ textDecoration: 'none' }}>
       <div className="pokemonCard" >
         <div className="card-top">
           <div className="pokemon-id">

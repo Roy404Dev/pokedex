@@ -71,7 +71,7 @@ const Details = () => {
       <div className="details__container">
         <header className="details__header">
           <div className="header-left">
-            <Link to="/">
+            <Link to="/pokedex/">
               <img src={chevronLeft} alt="img" />
             </Link>
             <span className="pokemonName">{pokemonData.name}</span>
